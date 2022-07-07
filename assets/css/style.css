@@ -2,6 +2,16 @@ header {
     padding-bottom: 30px;
 }
 
-.main-card {
+h1 {
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.buttons-card {
     height: 200px;
+    padding-bottom: 10px;
+}
+
+.cards {
+    height: 300px;
 }

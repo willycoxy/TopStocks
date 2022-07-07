@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>TOP STOCK</title>
@@ -12,17 +12,33 @@
     
 </head>
 <body>
-    <header>
-        <h1 class="display-4 bg-secondary">Top Stocks</h1>
-    </header>
-    <div class="container">
-        <div class="main-card row justify-center">
-            <div class="col-5 bg-primary text-white">
-                <h2>Indexes</h2>
+    <div class="container-fluid">
+        <header>
+            <h1 class="display-4 bg-secondary">Top Stocks</h1>
+        </header>
+        <div class="buttons-card row justify-center d-flex flex column">
+            <div class="col-lg-5 col-md-7 col-sm-9 bg-primary text-white text-center justify-center">
+                <h2 class="h4">Indexes</h2>
                 <button type="button" class="btn btn-danger btn-block">S&P 500</button>
                 <button type="button" class="btn btn-danger btn-block">Dow Jones Industrial Average</button>
                 <button type="button" class="btn btn-danger btn-block">Nasdaq Composite</button>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend mt-5">
+                      <button class="btn btn-secondary" type="button">Go</button>
+                    </div>
+                    <select class="custom-select mt-5" id="inputGroupSelect03" aria-label="Example select with button addon">
+                      <option selected>Choose...</option>
+                      <option value="1">Tesla</option>
+                      <option value="2">Amazon</option>
+                      <option value="3">Facebook</option>
+                    </select>
+                  </div>
             </div>
+        </div>
+        <div class="row mt-40 justify-content-around">
+            <div class="cards col-lg-3 m-1 bg-primary">Test</div>
+            <div class="cards col-lg-4 m-1 bg-primary">Test</div>
+            <div class="cards col-lg-3 m-1 bg-primary">Test</div>
         </div>
     </div>
 </body>
