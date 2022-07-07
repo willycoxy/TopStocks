@@ -4,42 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>TOP STOCK</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">!-->
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <link rel="stylesheet" href="/assets/css/style.css">
+    
 </head>
 <body>
-    <header class-="columns">
-        <div class="column is-full has-background-grey">
-            <p> TOP STOCK BIG DICK GANG</p>
-        </div>
+    <header>
+        <h1 class="display-4 bg-secondary">Top Stocks</h1>
     </header>
-
-    <div class="columns is-variable is-0">
-        <!-- Search bar that outputs the stock searched  -->
-
-        <div class="column is-4 is-one-third has-background-info">
-            <div>
-                asdasds
+    <div class="container">
+        <div class="main-card row justify-center">
+            <div class="col-5 bg-primary text-white">
+                <h2>Indexes</h2>
+                <button type="button" class="btn btn-danger btn-block">S&P 500</button>
+                <button type="button" class="btn btn-danger btn-block">Dow Jones Industrial Average</button>
+                <button type="button" class="btn btn-danger btn-block">Nasdaq Composite</button>
             </div>
         </div>
-
-        <!-- Biggest Winners -->
-        <div class="column is-4 is-one-third has-background-primary">
-            
-        </div>
-
-        <!-- Biggest losers of the day -->
-        <div class="column is-one-third has-background-warning">
-          
-        </div>
-
-        <!-- Just our information -->
     </div>
-    <footer>
-
-    </footer>
+</body>
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
