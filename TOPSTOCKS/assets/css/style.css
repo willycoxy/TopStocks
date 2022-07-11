@@ -1,0 +1,23 @@
+/*
+h1 {
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+*/
+
+.buttons-card {
+    height: 200px;
+    padding-bottom: 10px;
+}
+
+.indexes-card {
+    height: 300px;
+}
+
+.news-card {
+    height: 300px;
+}
+
+.topStocks-card {
+    height: 300px;
+}
