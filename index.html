@@ -13,56 +13,51 @@
 </head>
 <body>
     <div class="container-fluid">
-        <header class="navbar bg-secondary mb-3">
+        <header class="navbar mb-3">
             <h1 class="h2">Top Stocks</h1>
         </header>
-        <div class="buttons-card row justify-center d-flex flex column">
-            <div class="col-lg-5 col-md-7 col-sm-9 bg-primary text-white text-center justify-center rounded-xl">
-                <button type="button" class="btn1 btn btn-danger btn-block mt-3">S&P 500</button>
-                <button type="button" class="btn2 btn btn-danger btn-block">Dow Jones Industrial Average</button>
-                <button type="button" class="btn3 btn btn-danger btn-block">Nasdaq Composite</button>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend mt-5">
-                      <button class="btn btn-secondary" type="button">Go</button>
+        <div class="row justify-center d-flex flex column">
+            <div class="buttons-card col-lg-5 col-md-7 col-sm-9 text-white text-center justify-center rounded-xl">
+                <button type="button" class="btn1 btn btn-info btn-block mt-3">S&P 500</button>
+                <button type="button" class="btn2 btn btn-info btn-block">Dow Jones Industrial Average</button>
+                <button type="button" class="btn3 btn btn-info btn-block">Nasdaq Composite</button>
+                <div class="input-group mt-5">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-info" type="button" id="button-addon1">Go</button>
                     </div>
-                    <select class="custom-select mt-5" id="inputGroupSelect03" aria-label="Example select with button addon">
-                      <option selected>Choose...</option>
-                      <option value="1">Tesla</option>
-                      <option value="2">Amazon</option>
-                      <option value="3">Facebook</option>
-                    </select>
+                    <input type="text" class="user-input form-control" placeholder="Search Ticker" aria-label="Example text with button addon" aria-describedby="button-addon1">
                   </div>
             </div>
         </div>
         <div class="row mt-40 mb-40 justify-content-around text-center">
-            <div class="indexes-card col-lg-3 m-1 bg-primary rounded-xl">
+            <div class="indexes-card col-lg-3 m-1 rounded-xl">
                 <h4 class="h4">Indexes</h4>
             </div>
-            <div class="news-card col-lg-4 m-1 bg-primary rounded-xl">
+            <div class="news-card col-lg-4 m-1 rounded-xl">
                 <h4 class="h4">News</h4>
             </div>
-            <div class="topStocks-card col-lg-3 m-1 bg-primary rounded-xl">
+            <div class="topStocks-card col-lg-3 m-1 rounded-xl">
                 <h4 class="h4">Top Stocks</h4>
             </div>
         </div>
-        <footer class="navbar bg-info d-flex">
+        <footer class="navbar d-flex">
             <p>Copyright &copy 2022 Top Stocks, Inc</p>
             <ul class="d-flex">
                 <li class="nav-item">
-                    <button type="button" class=" btn-will btn btn-outline-danger m-1">Will</button>
+                    <button type="button" class=" btn-will btn btn-info m-1">Will</button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn-marty btn btn-outline-danger m-1">Marty</button>
+                    <button type="button" class="btn-marty btn btn-info m-1">Marty</button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn-chris btn btn-outline-danger m-1">Chris</button>
+                    <button type="button" class="btn-chris btn btn-info m-1">Chris</button>
                 </li>
             </ul>
 
         </footer>
     </div>
 </body>
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

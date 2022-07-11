@@ -5,19 +5,40 @@ h1 {
 }
 */
 
+body {
+    background-color: rgb(112,181,192)
+}
+
+header {
+    border-bottom: 2px solid rgb(240,219,203);
+}
+
 .buttons-card {
     height: 200px;
+    background-color: rgb(112,181,192);
     padding-bottom: 10px;
 }
 
 .indexes-card {
     height: 300px;
+    background-color: rgb(226,231,227);
 }
 
 .news-card {
     height: 300px;
+    background-color: rgb(226,231,227);
 }
 
 .topStocks-card {
     height: 300px;
+    background-color: rgb(226,231,227);
 }
+
+.btn {
+    background-color: rgb(1,108,138);
+}
+
+footer {
+    border-top: 2px solid rgb(240,219,203);
+}
+
