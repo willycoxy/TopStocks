@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>TOP STOCK</title>
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">!-->
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" /> 
 </head>
 <body>
     <div class="container-fluid">
@@ -41,8 +40,44 @@
             <div class="news-card col-lg-4 m-1 bg-primary rounded-xl">
                 <h4 class="h4">News</h4>
             </div>
-            <div class="topStocks-card col-lg-3 m-1 bg-primary rounded-xl">
+            <div class="topStocks-card col-lg-3 m-1 bg-primary rounded-xl" id="top">
                 <h4 class="h4">Top Stocks</h4>
+                <table class = "table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Ticker</th>
+                            <th scope="col">Current</th>
+                            <th scope="col">Change</th>
+                            <th scope="col">Volume</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" id="a1"></th>
+                            <td id="a2"></td>
+                            <td id="a3"></td>
+                            <td id="a4"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="b1"></th>
+                            <td id="b2"></td>
+                            <td id="b3"></td>
+                            <td id="b4"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="c1"></th>
+                            <td id="c2"></td>
+                            <td id="c3"></td>
+                            <td id="c4"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="d1"></th>
+                            <td id="d2"></td>
+                            <td id="d3"></td>
+                            <td id="d4"></td>
+                        </tr>
+                    </tbody>    
+                </table>
             </div>
         </div>
         <footer class="navbar bg-info d-flex">
@@ -55,14 +90,12 @@
                     <button type="button" class="btn-marty btn btn-outline-danger m-1">Marty</button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn-chris btn btn-outline-danger m-1">Chris</button>
+                    <button type="button" class="btn-chris btn btn-outline-danger m-1">Khris</button>
                 </li>
             </ul>
-
         </footer>
     </div>
 </body>
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
 </html>
+
