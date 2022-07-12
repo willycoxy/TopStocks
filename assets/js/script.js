@@ -1,8 +1,11 @@
-
+// Index Buttons
 sPButtonEl = document.querySelector(".btn1")
 dowJonesButtonEl = document.querySelector(".btn2");
 nasdaqButtonEl = document.querySelector(".btn3");
+stockTitleEl = document.querySelector(".stockTitle")
 
+// Function that fetches api for displaying if that market is open or closed or not. 
+// Displays the status in the far right of the navbar.
 function marketStatus () {
     fetch("https://api.polygon.io/v1/marketstatus/now?apiKey=t6vX15DF8kEE3wQ4nnk9aEmGguUiai5H")
     .then(response => {
@@ -17,7 +20,7 @@ function marketStatus () {
 
 marketStatus();
 
-
+// Function that fetches api for info on Vanguard 500 etf that follows the S&P 500.
 function getsP () {
     fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?tickers=VOO&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4")
     .then(response => {
@@ -38,9 +41,10 @@ function getsP () {
         document.querySelector(".closer").innerHTML = `Close: ${close}`;
     });
 }
-
+// When sP Button is clicked getSp is displayed in the index card.
 sPButtonEl.addEventListener("click", getsP);
 
+// Function that fetches api for info on SPDR etf that follows the Dow Jones.
 function getDowJones () {
     fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?tickers=DIA&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4")
     .then(response => {
@@ -61,9 +65,10 @@ function getDowJones () {
         document.querySelector(".closer").innerHTML = `Close: ${close}`;
     });
 }
-
+// When dowJones Button is clicked getDowJones is displayed in the index card.
 dowJonesButtonEl.addEventListener("click", getDowJones);
 
+// Function that fetches api for info on QQQ etf that follows the Nasdaq.
 function getNasdaq () {
     fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?tickers=QQQ&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4")
     .then(response => {
@@ -84,12 +89,13 @@ function getNasdaq () {
         document.querySelector(".closer").innerHTML = `Close: ${close}`;
     });
 }
-
+// When nasdaq Button is clicked getNasdaq is displayed in the index card.
 nasdaqButtonEl.addEventListener("click", getNasdaq);
 
 
 
-
+//Function that fetches api for information on the current gainers in the stock market
+//Fetched info is displayed in the Top Stocks Card.
 fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/gainers?include_otc=false&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4")
   .then(response => response.json())
   .then(data => {
@@ -119,6 +125,24 @@ fetch('https://finviz2.p.rapidapi.com/api/v1/news?type=%3CREQUIRED%3E/rapidapi-k
   .then(data=>{
     console.log(response)
   })
+
+
+
+
+  
+
+  $(".btn1").on("click", function () {
+    var text = $("#stockTitle").textContent;
+    localStorage.setItem(text)
+});
+
+
+storeData();
+function storeData () {
+    var stats = stockTitleEl.textContent
+    localStorage.setItem(".stockTitle", JSON.stringify(stats))
+}
+
 
 
 
