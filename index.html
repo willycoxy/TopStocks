@@ -13,10 +13,14 @@
 </head>
 <body>
     <div class="container-fluid">
+        <!-- Header Start -->
         <header class="navbar d-flex mb-3">
             <h1 class="h2">Top Stocks</h1>
             <p class="statusDisplay h5"></p>
         </header>
+        <!-- Header End -->
+
+        <!-- Index Buttons/ Search Bar Start -->
         <div class="row justify-center d-flex flex column">
             <div class="buttons-card col-lg-5 col-md-7 col-sm-9 text-white text-center justify-center rounded-xl">
                 <button type="button" class="btn1 btn btn-info btn-block mt-3">S&P 500</button>
@@ -30,76 +34,99 @@
                   </div>
             </div>
         </div>
+        <!-- Index Buttons/ Search Bar End -->
+
+        <!-- Cards Row Start -->
         <div class="row mt-40 mb-40 justify-content-around text-center">
+            <!-- Index Card Start -->
             <div class="indexes-card col-lg-3 m-1 rounded-xl">
-                <h4 class="h4">Indexes</h4>
+                <h4 class="h3 pb-1">Indexes</h4>
                 <ul>
+                    <li class="stockTitle h5" id="stockTitle"></li>
                     <li class="volume h6"></li>
+                    <li class="open h6"></li>
                     <li class="high h6"></li>
                     <li class="low h6"></li>
+                    <li class="closer h6"></li>
                 </ul>
             </div>
+            <!-- Index Card End -->
+
+            <!-- News Card Start -->
             <div class="news-card col-lg-4 m-1 rounded-xl">
-                <h4 class="h4">News</h4>
+                <h4 class="h3 pb-1">News</h4>
             </div>
+            <!-- News Card End -->
+
+            <!-- Top Stocks Card Start -->
             <div class="topStocks-card col-lg-3 m-1 rounded-xl">
-                <h4 class="h4">Top Stocks</h4>
-                <table class = "table table-info">
-                    <thead>
-                        <tr>
-                            <th scope="col">Ticker</th>
-                            <th scope="col">Current</th>
-                            <th scope="col">Change</th>
-                            <th scope="col">Volume</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row" id="a1"></th>
-                            <td id="a2"></td>
-                            <td id="a3"></td>
-                            <td id="a4"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" id="b1"></th>
-                            <td id="b2"></td>
-                            <td id="b3"></td>
-                            <td id="b4"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" id="c1"></th>
-                            <td id="c2"></td>
-                            <td id="c3"></td>
-                            <td id="c4"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" id="d1"></th>
-                            <td id="d2"></td>
-                            <td id="d3"></td>
-                            <td id="d4"></td>
-                        </tr>
-                    </tbody>    
-                </table>
+                <h4 class="h3 pb-1">Top Stocks</h4>
+                <div class="table-responsive-lg">
+                    <table class ="table table-info table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Ticker</th>
+                                <th scope="col">Current</th>
+                                <th scope="col">Change</th>
+                                <th scope="col">Volume</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" id="a1"></th>
+                                <td id="a2"></td>
+                                <td id="a3"></td>
+                                <td id="a4"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="b1"></th>
+                                <td id="b2"></td>
+                                <td id="b3"></td>
+                                <td id="b4"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="c1"></th>
+                                <td id="c2"></td>
+                                <td id="c3"></td>
+                                <td id="c4"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="d1"></th>
+                                <td id="d2"></td>
+                                <td id="d3"></td>
+                                <td id="d4"></td>
+                            </tr>
+                        </tbody>    
+                    </table>
+                </div>
             </div>
+            <!-- Top Stocks Card End -->
         </div>
+        <!-- Card Row End -->
+
+        <!-- Footer Start -->
         <footer class="navbar d-flex">
             <p>Copyright &copy 2022 Top Stocks, Inc</p>
+            <!-- GitHub Link Buttons Start -->
             <ul class="d-flex">
                 <li class="nav-item">
-                    <button type="button" class=" btn-will btn btn-info m-1">Will</button>
+                    <a class="btn-chris btn btn-info m-1" href="https://github.com/willycoxy" role="button">Will</a>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn-marty btn btn-info m-1">Marty</button>
+                    <a class="btn-chris btn btn-info m-1" href="https://github.com/MCN17" role="button">Marty</a>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn-chris btn btn-info m-1">Khris</button>
+                    <a class="btn-chris btn btn-info m-1" href="https://github.com/Khristopher-Schick" role="button">Kris</a>
                 </li>
             </ul>
+            <!-- Github Link Buttons End -->
 
         </footer>
+        <!-- Footer End -->
     </div>
 </body>
     <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
