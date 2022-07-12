@@ -24,11 +24,6 @@ header {
     background-color: rgb(226,231,227);
 }
 
-.indexes-card li {
-    line-height: 30px;
-}
-
-
 .news-card {
     height: 300px;
     background-color: rgb(226,231,227);
@@ -46,4 +41,3 @@ header {
 footer {
     border-top: 2px solid rgb(240,219,203);
 }
-
