@@ -9,19 +9,21 @@ When a user chooses either one of the top indexes or searches a specific stock o
 * CSS
 * JavaScript
 
-#APIs
+## APIs
 * Polygon
 * World Time
+
+## Contributors 
+* Will
+* Marty
+* Khris
 
 # Website Link 
 
 ![image](https://user-images.githubusercontent.com/104735194/178801731-465a35d6-0136-43d2-aa51-d958c45f3edd.png)
 
 
-## Contributors 
-* Will
-* Marty
-* Khris
+
 
 ### ©️2022 Top Stocks, Inc
 
