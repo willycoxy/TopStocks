@@ -116,15 +116,20 @@ fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/gainers?inclu
     document.getElementById('d2').textContent = `$ ${data.tickers[3].day.c}`
     document.getElementById('d3').textContent = `% ${data.tickers[3].todaysChangePerc}`
     document.getElementById('d4').textContent = data.tickers[3].day.v
+    document.getElementById('e1').textContent = data.tickers[4].ticker
+    document.getElementById('e2').textContent = `$ ${data.tickers[4].day.c}`
+    document.getElementById('e3').textContent = `% ${data.tickers[4].todaysChangePerc}`
+    document.getElementById('e4').textContent = data.tickers[4].day.v
   })
 
 
-
-fetch('https://finviz2.p.rapidapi.com/api/v1/news?type=%3CREQUIRED%3E/rapidapi-key=14b035a1f0mshcc430d50a1c6dc4p1056b6jsn7b1435')
-  .then(response => response.json())
-  .then(data=>{
-    console.log(response)
-  })
+// const searching = doucment.getElementById("userInput");
+// console.log(search)
+// fetch('https://api.polygon.io/v2/reference/news?='+ searching +'&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4')
+//   .then(response => response.json())
+//   .then(data=>{
+//     console.log(data);
+//   })
 
 
 
@@ -143,6 +148,19 @@ function storeData () {
     localStorage.setItem(".stockTitle", JSON.stringify(stats))
 }
 
+function time () {
+    fetch("http://worldtimeapi.org/api/ip%22")
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      const time = data.datetime.slice(12,19)
+      console.log(data.datetime);
+      document.querySelector(".timeDisplay").innerHTML = `Time: ${time}`;
+
+    });
+  };
+  time ()
 
 
 
