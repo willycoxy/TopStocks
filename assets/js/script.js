@@ -119,6 +119,60 @@ fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/gainers?inclu
   })
 
 
+// Function that fetches an api for news on a particular stock that is searched by the user.
+// Links to different news articles are then displayed in the News Card.
+const newsTicker = (ev)=>{
+    ev.preventDefault();
+    let ticker1 =  document.getElementById('searchText').value; 
+    var newsApi = 'https://api.polygon.io/v2/reference/news?ticker=';
+    var newsApiKey = '&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4';
+    var final = newsApi + ticker1 + newsApiKey;
+     fetch(final)
+     .then(response => response.json())
+     .then(data => {
+        document.getElementById('z1').textContent = data.results[0].title
+        document.getElementById('z2').textContent = data.results[1].title
+        document.getElementById('z3').textContent = data.results[2].title
+        document.getElementById('z4').textContent = data.results[3].title
+        document.getElementById('z5').textContent = data.results[4].title
+     })
+}
+document.addEventListener('DOMContentLoaded', ()=> {
+    document.getElementById('searchBtn').addEventListener('click', newsTicker);
+});
+
+
+// Function that fetches an api for information on a specific stock that is searched by the user.
+// Information on that stock is then displayed in the same card as indexes.
+const indexTicker = (ev)=>{
+    ev.preventDefault();
+    let indexTicker1 =  document.getElementById('searchText').value; 
+    var indexApi = 'https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?tickers=';
+    var indexApiKey = '&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4';
+    var final = indexApi + indexTicker1 + indexApiKey;
+     fetch(final)
+     .then(response => response.json())
+     .then(data => {
+        document.getElementById('stockTitle').textContent = data.tickers[3]
+        const volume = data.tickers[0].day.v
+        const open = data.tickers[0].day.o
+        const high = data.tickers[0].day.h
+        const low = data.tickers[0].day.l
+        const close = data.tickers[0].day.c
+        document.querySelector(".volume").innerHTML = `Volume: ${volume}`;
+        document.querySelector(".open").innerHTML = `Open: ${open}`;
+        document.querySelector(".high").innerHTML = `High: ${high}`;
+        document.querySelector(".low").innerHTML = `Low: ${low}`;
+        document.querySelector(".closer").innerHTML = `Close: ${close}`;
+     })
+}
+document.addEventListener('DOMContentLoaded', ()=> {
+    document.getElementById('searchBtn').addEventListener('click', indexTicker);
+});
+
+
+
+// These functions are for saving information on the indexes/stocks searched by the user to Local Storage.
   $(".btn1").on("click", function () {
     var text = $("#stock-info")[0].textContent;
     localStorage.setItem("Stock", text)
@@ -134,13 +188,21 @@ $(".btn3").on("click", function () {
   localStorage.setItem("Stock", text)
 });
 
+$(".btn-info").on("click", function () {
+  var text = $("#stock-info")[0].textContent;
+  localStorage.setItem("Stock", text)
+});
 
+// $(".btn-info").on("click", function () {
+//   var text = $(".table")[0].textContent;
+//   localStorage.setItem("Stock", text)
+// });
 
-
+//Allows the information displayed to persist if user refreshes the page.
  document.getElementById("stockTitle").innerHTML = localStorage.getItem("Stock");
 
- 
-
+// Function that fetches an api for the current time.
+// Current time is displayed in center of the navbar.
  function time () {
     fetch("http://worldtimeapi.org/api/ip%22")
     .then(response => {
