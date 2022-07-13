@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>TOP STOCK</title>
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">!-->
+    
+    
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     
 </head>
@@ -15,9 +17,9 @@
     <div class="container-fluid">
         <!-- Header Start -->
         <header class="navbar d-flex mb-3">
-            <h1 class="h2">Top Stocks</h1>
-            <p class="timeDisplay h5"></p>
-            <p class="statusDisplay h5"></p>
+            <h1 class="is-size-1 has-text-black">Top Stocks</h1>
+            <p class="timeDisplay is-size-4 pt-4 has-text-black"></p>
+            <p class="statusDisplay is-size-4 pt-4 has-text-black"></p>
         </header>
         <!-- Header End -->
 
@@ -41,29 +43,29 @@
         <div class="row mt-40 mb-40 justify-content-around text-center">
             <!-- Index Card Start -->
             <div class="indexes-card col-lg-3 m-1 rounded-xl">
-                <h4 class="h3 pb-1">Indexes</h4>
-                <ul>
-                    <li class="stockTitle h5" id="stockTitle"></li>
-                    <li class="volume h6"></li>
-                    <li class="open h6"></li>
-                    <li class="high h6"></li>
-                    <li class="low h6"></li>
-                    <li class="closer h6"></li>
+                <h4 class="h3 pb-1 has-text-black">Indexes</h4>
+                <ul id="stock-info">
+                    <li class="stockTitle h5 has-text-black" id="stockTitle"></li>
+                    <li class="volume h6 has-text-black" id="volume"></li>
+                    <li class="open h6 has-text-black" id="open"></li>
+                    <li class="high h6 has-text-black" id="high"></li>
+                    <li class="low h6 has-text-black" id="low"></li>
+                    <li class="closer h6 has-text-black" id="closer"></li>
                 </ul>
             </div>
             <!-- Index Card End -->
 
             <!-- News Card Start -->
             <div class="news-card col-lg-4 m-1 rounded-xl">
-                <h4 class="h3 pb-1">News</h4>
+                <h4 class="h3 pb-1 has-text-black">News</h4>
             </div>
             <!-- News Card End -->
 
             <!-- Top Stocks Card Start -->
             <div class="topStocks-card col-lg-3 m-1 rounded-xl">
-                <h4 class="h3 pb-1">Top Stocks</h4>
+                <h4 class="h3 pb-1 has-text-black">Top Stocks</h4>
                 <div class="table-responsive-lg">
-                    <table class ="table table-info table-hover">
+                    <table class ="table has-background-primary-light table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">Ticker</th>
@@ -113,7 +115,7 @@
 
         <!-- Footer Start -->
         <footer class="navbar d-flex">
-            <p>Copyright &copy 2022 Top Stocks, Inc</p>
+            <p class="is-size-6">Copyright &copy 2022 Top Stocks, Inc</p>
             <!-- GitHub Link Buttons Start -->
             <ul class="d-flex">
                 <li class="nav-item">
@@ -123,7 +125,7 @@
                     <a class="btn-chris btn btn-info m-1" href="https://github.com/MCN17" role="button">Marty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn-chris btn btn-info m-1" href="https://github.com/Khristopher-Schick" role="button">Kris</a>
+                    <a class="btn-chris btn btn-info m-1" href="https://github.com/Khristopher-Schick" role="button">Khris</a>
                 </li>
             </ul>
             <!-- Github Link Buttons End -->
@@ -132,7 +134,6 @@
         <!-- Footer End -->
     </div>
 </body>
-    <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>

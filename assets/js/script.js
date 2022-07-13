@@ -116,45 +116,38 @@ fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/gainers?inclu
     document.getElementById('d2').textContent = `$ ${data.tickers[3].day.c}`
     document.getElementById('d3').textContent = `% ${data.tickers[3].todaysChangePerc}`
     document.getElementById('d4').textContent = data.tickers[3].day.v
-    document.getElementById('e1').textContent = data.tickers[4].ticker
-    document.getElementById('e2').textContent = `$ ${data.tickers[4].day.c}`
-    document.getElementById('e3').textContent = `% ${data.tickers[4].todaysChangePerc}`
-    document.getElementById('e4').textContent = data.tickers[4].day.v
   })
 
 
-// const searching = doucment.getElementById("userInput");
-// console.log(search)
-// fetch('https://api.polygon.io/v2/reference/news?='+ searching +'&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4')
-//   .then(response => response.json())
-//   .then(data=>{
-//     console.log(data);
-//   })
-
-
-
-
-  
-
   $(".btn1").on("click", function () {
-    var text = $("#stockTitle").textContent;
-    localStorage.setItem(text)
+    var text = $("#stock-info")[0].textContent;
+    localStorage.setItem("Stock", text)
+});
+
+$(".btn2").on("click", function () {
+  var text = $("#stock-info")[0].textContent;
+  localStorage.setItem("Stock", text)
+});
+
+$(".btn3").on("click", function () {
+  var text = $("#stock-info")[0].textContent;
+  localStorage.setItem("Stock", text)
 });
 
 
-storeData();
-function storeData () {
-    var stats = stockTitleEl.textContent
-    localStorage.setItem(".stockTitle", JSON.stringify(stats))
-}
 
-function time () {
+
+ document.getElementById("stockTitle").innerHTML = localStorage.getItem("Stock");
+
+ 
+
+ function time () {
     fetch("http://worldtimeapi.org/api/ip%22")
     .then(response => {
       return response.json();
     })
     .then(data => {
-      const time = data.datetime.slice(12,19)
+      const time = data.datetime.slice(11,19)
       console.log(data.datetime);
       document.querySelector(".timeDisplay").innerHTML = `Time: ${time}`;
 
@@ -162,89 +155,3 @@ function time () {
   };
   time ()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-// function getsP () {
-//     fetch("https://api.polygon.io/v2/aggs/ticker/VOO/range/1/day/2022-07-11/2022-07-11?adjusted=true&sort=asc&limit=120&apiKey=t6vX15DF8kEE3wQ4nnk9aEmGguUiai5H")
-//     .then(response => {
-//         return response.json();
-//     })
-//     .then(data => {
-//         console.log(data.results[0].v);
-//         const volume = data.results[0].v
-//         const open = data.results[0].o
-//         const high = data.results[0].h
-//         const low = data.results[0].l
-//         const close = data.results[0].c
-//         document.querySelector(".volume").innerHTML = `Volume: ${volume}`;
-//         document.querySelector(".open").innerHTML = `Open: ${open}`;
-//         document.querySelector(".high").innerHTML = `High: ${high}`;
-//         document.querySelector(".low").innerHTML = `Low: ${low}`;
-//         document.querySelector(".closer").innerHTML = `Close: ${close}`;
-//     });
-// }
-
-// sPButtonEl.addEventListener("click", getsP);
-
-// var getTicker = fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4").then(function(response) {
-//     response.json().then(function(data) {
-//         console.log(data);
-//     })
-// }) 
-
-// var marketStatus = function () {
-//     var polygonApiUrl = "https://api.polygon.io/v1/marketstatus/now?apiKey=t6vX15DF8kEE3wQ4nnk9aEmGguUiai5H";
-
-//     fetch(polygonApiUrl).then(function(response) {
-//         response.json().then(function(data) {
-//             console.log(data);
-//         });
-//     });
-// };
-
-// marketStatus();
-
-
-
-// var getTicker = fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?tickers=VOO&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4").then(function(response) {
-//     response.json().then(function(data) {
-//         console.log(data);
-//     })
-// }) 
-
-// getTicker();
-
-
-// var getTicker = function () {
-//     var polygonApiUrl = "https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4";
-
-//     fetch(polygonApiUrl).then(function(response) {
-//         response.json().then(function(data) {
-//             console.log(data);
-//         });
-//     });
-// };
-
-// getTicker();
-
-
-// https://api.polygon.io/v3/reference/tickers?ticker=GOOGL&active=true&sort=ticker&order=asc&limit=10&apiKey=t6vX15DF8kEE3wQ4nnk9aEmGguUiai5H
-
-// https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4
-// marketStatus();

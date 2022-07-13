@@ -1,15 +1,21 @@
+:root {
+    --cards-color: rgb(226,231,227);
+    --header-footer-border: rgb(240,219,203);
+    --cards-title-border: rgb(1,108,138);
+}
+
 
 body {
     background-color: rgb(112,181,192)
 }
 
 .h3 {
-    border-bottom: 2px solid rgb(1,108,138);
+    border-bottom: 2px solid var(--cards-title-border);
 }
 
 /* Header Style Start */
 header {
-    border-bottom: 2px solid rgb(240,219,203);
+    border-bottom: 2px solid var(--header-footer-border)
 }
 /* Header Style End */
 
@@ -23,7 +29,7 @@ header {
 
 .indexes-card {
     height: 375px;
-    background-color: rgb(226,231,227);
+    background-color: var(--cards-color);
 }
 
 .indexes-card li {
@@ -32,12 +38,12 @@ header {
 
 .news-card {
     height: 375px;
-    background-color: rgb(226,231,227);
+    background-color: var(--cards-color);
 }
 
 .topStocks-card {
     height: 375px;
-    background-color: rgb(226,231,227);
+    background-color: var(--cards-color);
 }
 /* Style Cards End */
 
@@ -51,6 +57,10 @@ header {
 
 /* Footer Style Start */
 footer {
-    border-top: 2px solid rgb(240,219,203);
+    border-top: 2px solid var(--header-footer-border)
 }
 /* Footer Style End */
+
+.navbar {
+    background-color: rgb(112,181,192)
+}
