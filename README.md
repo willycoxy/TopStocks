@@ -8,6 +8,8 @@ When a user chooses either one of the top indexes or searches a specific stock o
 * HTML5
 * CSS
 * JavaScript
+* Bootstrap
+* Bulma
 
 ## APIs
 * Polygon
