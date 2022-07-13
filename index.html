@@ -29,9 +29,9 @@
                 <button type="button" class="btn3 btn btn-info btn-block">Invesco QQQ Trust Series 1</button>
                 <div class="input-group mt-5">
                     <div class="input-group-prepend">
-                      <button class="btn btn-info" type="button" id="button-addon1">Go</button>
+                      <button class="btn btn-info" type="button" id="searchBtn">Go</button>
                     </div>
-                    <input type="text" class="user-input form-control" id='userInput' placeholder="Search Ticker" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <input type="text" class="user-input form-control" id='searchText' placeholder="Search Ticker" aria-label="Example text with button addon" aria-describedby="button-addon1">
                   </div>
             </div>
         </div>
@@ -44,18 +44,37 @@
                 <h4 class="h3 pb-1">Indexes</h4>
                 <ul>
                     <li class="stockTitle h5" id="stockTitle"></li>
-                    <li class="volume h6"></li>
-                    <li class="open h6"></li>
-                    <li class="high h6"></li>
-                    <li class="low h6"></li>
-                    <li class="closer h6"></li>
+                    <li class="volume h6" id="stock1"></li>
+                    <li class="open h6" id="stock2"></li>
+                    <li class="high h6" id="stock3"></li>
+                    <li class="low h6" id="stock4"></li>
+                    <li class="closer h6" id="stock5"></li>
                 </ul>
             </div>
             <!-- Index Card End -->
 
             <!-- News Card Start -->
             <div class="news-card col-lg-4 m-1 rounded-xl">
-                <h4 class="h3 pb-1">News</h4>
+                <h4 class="h3 pb-1" id="news">News</h4>
+                <table class ="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row" id="z1"></th>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="z2"></th>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="z3"></th>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="z4"></th>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="z5"></th>
+                        </tr>
+                    </tbody>    
+                </table>
             </div>
             <!-- News Card End -->
 
@@ -123,7 +142,7 @@
                     <a class="btn-chris btn btn-info m-1" href="https://github.com/MCN17" role="button">Marty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn-chris btn btn-info m-1" href="https://github.com/Khristopher-Schick" role="button">Kris</a>
+                    <a class="btn-chris btn btn-info m-1" href="https://github.com/Khristopher-Schick" role="button">Khris</a>
                 </li>
             </ul>
             <!-- Github Link Buttons End -->
@@ -131,9 +150,9 @@
         </footer>
         <!-- Footer End -->
     </div>
-</body>
     <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>
