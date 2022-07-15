@@ -3,7 +3,8 @@ sPButtonEl = document.querySelector(".btn1")
 dowJonesButtonEl = document.querySelector(".btn2");
 nasdaqButtonEl = document.querySelector(".btn3");
 stockTitleEl = document.querySelector(".stockTitle")
-
+goButtonEl = document.querySelector("searchBtn");
+=======
 const upper = document.getElementById("searchText");
             upper.value = upper.value.toUpperCase();
 
@@ -42,6 +43,7 @@ function getsP () {
         document.querySelector(".high").innerHTML = `High: ${high}`;
         document.querySelector(".low").innerHTML = `Low: ${low}`;
         document.querySelector(".closer").innerHTML = `Close: ${close}`;
+        saveData()
     });
 }
 // When sP Button is clicked getSp is displayed in the trends card.
@@ -66,6 +68,7 @@ function getDowJones () {
         document.querySelector(".high").innerHTML = `High: ${high}`;
         document.querySelector(".low").innerHTML = `Low: ${low}`;
         document.querySelector(".closer").innerHTML = `Close: ${close}`;
+        saveData();
     });
 }
 // When dowJones Button is clicked getDowJones is displayed in the trends card.
@@ -90,6 +93,7 @@ function getNasdaq () {
         document.querySelector(".high").innerHTML = `High: ${high}`;
         document.querySelector(".low").innerHTML = `Low: ${low}`;
         document.querySelector(".closer").innerHTML = `Close: ${close}`;
+        saveData();
     });
 }
 // When nasdaq Button is clicked getNasdaq is displayed in the trends card.
@@ -141,6 +145,14 @@ const newsTicker = (ev)=>{
      fetch(final)
      .then(response => response.json())
      .then(data => {
+
+        document.getElementById('z1').textContent = data.results[0].title
+        document.getElementById('z2').textContent = data.results[1].title
+        document.getElementById('z3').textContent = data.results[2].title
+        document.getElementById('z4').textContent = data.results[3].title
+        document.getElementById('z5').textContent = data.results[4].title
+        // saveNews();           //Need to fix this function--> once saved to local storage the news for a specific stock won't change if user searches a new stock.
+
         document.getElementById('link1').innerHTML = data.results[0].title
         document.getElementById('link2').innerHTML = data.results[1].title
         document.getElementById('link3').innerHTML = data.results[2].title
@@ -153,6 +165,7 @@ const newsTicker = (ev)=>{
         document.getElementById('link4').href = data.results[3].article_url 
         document.getElementById('link5').href = data.results[4].article_url 
         document.getElementById('link6').href = data.results[5].article_url 
+
      })
 }
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -182,6 +195,7 @@ const indexTicker = (ev)=>{
         document.querySelector(".high").innerHTML = `High: ${high}`;
         document.querySelector(".low").innerHTML = `Low: ${low}`;
         document.querySelector(".closer").innerHTML = `Close: ${close}`;
+        saveData();
      })
 }
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -191,33 +205,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 
 // These functions are for saving information on the indexes/stocks searched by the user to Local Storage.
-  $(".btn1").on("click", function () {
-    var text = $("#stock-info")[0].textContent;
-    localStorage.setItem("Stock", text)
-});
-
-$(".btn2").on("click", function () {
+function saveData () {
   var text = $("#stock-info")[0].textContent;
   localStorage.setItem("Stock", text)
-});
+}
 
-$(".btn3").on("click", function () {
-  var text = $("#stock-info")[0].textContent;
-  localStorage.setItem("Stock", text)
-});
-
-$(".btn-info").on("click", function () {
-  var text = $("#stock-info")[0].textContent;
-  localStorage.setItem("Stock", text)
-});
-
-// $(".btn-info").on("click", function () {
-//   var text = $(".table")[0].textContent;
-//   localStorage.setItem("Stock", text)
-// });
+// function saveNews () {
+//   var text = $("#table")[0].textContent;    //Need to fix this function--> once saved to local storage the news for a specific stock won't change if user searches a new stock.
+//   localStorage.setItem("news", text)
+// }
 
 //Allows the information displayed to persist if user refreshes the page.
- document.getElementById("stockTitle").innerHTML = localStorage.getItem("Stock");
+document.getElementById("stockTitle").innerHTML = localStorage.getItem("Stock");
+// document.getElementById("table").innerHTML = localStorage.getItem("news");    //Need to fix this or the function above--> once saved to local storage the news for a specific stock won't change if user searches a new stock.
 
 // Function that fetches an api for the current time.
 // Current time is displayed in center of the navbar.
