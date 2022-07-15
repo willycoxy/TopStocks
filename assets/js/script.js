@@ -4,6 +4,9 @@ dowJonesButtonEl = document.querySelector(".btn2");
 nasdaqButtonEl = document.querySelector(".btn3");
 stockTitleEl = document.querySelector(".stockTitle")
 
+const upper = document.getElementById("searchText");
+            upper.value = upper.value.toUpperCase();
+
 // Function that fetches api for displaying if that market is open or closed or not. 
 // Displays the status in the far right of the navbar.
 function marketStatus () {
@@ -131,7 +134,7 @@ fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/gainers?inclu
 
 const newsTicker = (ev)=>{
     ev.preventDefault();
-    let ticker1 =  document.getElementById('searchText').value; 
+    let ticker1 =  document.getElementById('searchText').value.toUpperCase(); 
     var newsApi = 'https://api.polygon.io/v2/reference/news?ticker=';
     var newsApiKey = '&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4';
     var final = newsApi + ticker1 + newsApiKey;
@@ -161,7 +164,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 // Information on that stock is then displayed in the same card as trends card
 const indexTicker = (ev)=>{
     ev.preventDefault();
-    let indexTicker1 =  document.getElementById('searchText').value; 
+    let indexTicker1 =  document.getElementById('searchText').value.toUpperCase(); 
     var indexApi = 'https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?tickers=';
     var indexApiKey = '&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4';
     var final = indexApi + indexTicker1 + indexApiKey;

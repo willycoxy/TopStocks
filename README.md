@@ -20,8 +20,8 @@ When a user chooses either one of the top indexes or searches a specific stock o
 * Marty
 * Khris
 
-# Website Link 
-https://willycoxy.github.io/TopStocks/
+# Website Link (https://willycoxy.github.io/TopStocks/)
+
 ![image](https://user-images.githubusercontent.com/104735194/178801731-465a35d6-0136-43d2-aa51-d958c45f3edd.png)
 
 
