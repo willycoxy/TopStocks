@@ -1,14 +1,31 @@
-# TopStocks
-Project 1 TopStocks
+# Top Stocks, Inc
+
+## Description
+Top Stocks is a basic stock scanner that can help the user search through the stock market for any stocks that they may currently be invested in or are interested about.
+When a user chooses either one of the top indexes or searches a specific stock on the market, they will be provided with basic data on the stock as well as current news relating to that stock.
+
+## Built with 
+* HTML5
+* CSS
+* JavaScript
+* Bootstrap
+* Bulma
+
+## APIs
+* Polygon
+* World Time
+
+## Contributors 
+* Will
+* Marty
+* Khris
+
+# Website Link (https://willycoxy.github.io/TopStocks/)
+
+![image](https://user-images.githubusercontent.com/104735194/178801731-465a35d6-0136-43d2-aa51-d958c45f3edd.png)
 
 
-# Description
-TopStocks is a tool used to help the user sort through the available stocks and narrow down what the investor might be looking for, this is a basic stock scanner and can help you see the gainers and big losers of the day as well as the news clips of the stocks searched
 
-# Built with 
-This application was built with HTML5, CSS3, JavaScript and two APIs Polygon and World Time
 
-# Website Link 
+### ©️2022 Top Stocks, Inc
 
-# People involved
-Will, Marty and Khris

@@ -4,6 +4,10 @@ dowJonesButtonEl = document.querySelector(".btn2");
 nasdaqButtonEl = document.querySelector(".btn3");
 stockTitleEl = document.querySelector(".stockTitle")
 goButtonEl = document.querySelector("searchBtn");
+=======
+const upper = document.getElementById("searchText");
+            upper.value = upper.value.toUpperCase();
+
 // Function that fetches api for displaying if that market is open or closed or not. 
 // Displays the status in the far right of the navbar.
 function marketStatus () {
@@ -42,7 +46,7 @@ function getsP () {
         saveData()
     });
 }
-// When sP Button is clicked getSp is displayed in the index card.
+// When sP Button is clicked getSp is displayed in the trends card.
 sPButtonEl.addEventListener("click", getsP);
 
 // Function that fetches api for info on SPDR etf that follows the Dow Jones.
@@ -67,7 +71,7 @@ function getDowJones () {
         saveData();
     });
 }
-// When dowJones Button is clicked getDowJones is displayed in the index card.
+// When dowJones Button is clicked getDowJones is displayed in the trends card.
 dowJonesButtonEl.addEventListener("click", getDowJones);
 
 // Function that fetches api for info on QQQ etf that follows the Nasdaq.
@@ -92,7 +96,7 @@ function getNasdaq () {
         saveData();
     });
 }
-// When nasdaq Button is clicked getNasdaq is displayed in the index card.
+// When nasdaq Button is clicked getNasdaq is displayed in the trends card.
 nasdaqButtonEl.addEventListener("click", getNasdaq);
 
 
@@ -119,26 +123,49 @@ fetch("https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/gainers?inclu
     document.getElementById('d2').textContent = `$ ${data.tickers[3].day.c}`
     document.getElementById('d3').textContent = `% ${data.tickers[3].todaysChangePerc}`
     document.getElementById('d4').textContent = data.tickers[3].day.v
+    document.getElementById('e1').textContent = data.tickers[4].ticker
+    document.getElementById('e2').textContent = `$ ${data.tickers[4].day.c}`
+    document.getElementById('e3').textContent = `% ${data.tickers[4].todaysChangePerc}`
+    document.getElementById('e4').textContent = data.tickers[4].day.v
+    document.getElementById('f1').textContent = data.tickers[5].ticker
+    document.getElementById('f2').textContent = `$ ${data.tickers[5].day.c}`
+    document.getElementById('f3').textContent = `% ${data.tickers[5].todaysChangePerc}`
+    document.getElementById('f4').textContent = data.tickers[5].day.v
   })
-
 
 // Function that fetches an api for news on a particular stock that is searched by the user.
 // Links to different news articles are then displayed in the News Card.
+
 const newsTicker = (ev)=>{
     ev.preventDefault();
-    let ticker1 =  document.getElementById('searchText').value; 
+    let ticker1 =  document.getElementById('searchText').value.toUpperCase(); 
     var newsApi = 'https://api.polygon.io/v2/reference/news?ticker=';
     var newsApiKey = '&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4';
     var final = newsApi + ticker1 + newsApiKey;
      fetch(final)
      .then(response => response.json())
      .then(data => {
+
         document.getElementById('z1').textContent = data.results[0].title
         document.getElementById('z2').textContent = data.results[1].title
         document.getElementById('z3').textContent = data.results[2].title
         document.getElementById('z4').textContent = data.results[3].title
         document.getElementById('z5').textContent = data.results[4].title
         // saveNews();           //Need to fix this function--> once saved to local storage the news for a specific stock won't change if user searches a new stock.
+
+        document.getElementById('link1').innerHTML = data.results[0].title
+        document.getElementById('link2').innerHTML = data.results[1].title
+        document.getElementById('link3').innerHTML = data.results[2].title
+        document.getElementById('link4').innerHTML = data.results[3].title
+        document.getElementById('link5').innerHTML = data.results[4].title
+        document.getElementById('link6').innerHTML = data.results[5].title
+        document.getElementById('link1').href = data.results[0].article_url 
+        document.getElementById('link2').href = data.results[1].article_url 
+        document.getElementById('link3').href = data.results[2].article_url 
+        document.getElementById('link4').href = data.results[3].article_url 
+        document.getElementById('link5').href = data.results[4].article_url 
+        document.getElementById('link6').href = data.results[5].article_url 
+
      })
 }
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -147,10 +174,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 
 // Function that fetches an api for information on a specific stock that is searched by the user.
-// Information on that stock is then displayed in the same card as indexes.
+// Information on that stock is then displayed in the same card as trends card
 const indexTicker = (ev)=>{
     ev.preventDefault();
-    let indexTicker1 =  document.getElementById('searchText').value; 
+    let indexTicker1 =  document.getElementById('searchText').value.toUpperCase(); 
     var indexApi = 'https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers?tickers=';
     var indexApiKey = '&apiKey=97jcUfkUrkUqlBMzoexxjePUT1lnkBe4';
     var final = indexApi + indexTicker1 + indexApiKey;
