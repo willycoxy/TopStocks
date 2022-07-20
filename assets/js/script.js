@@ -144,19 +144,20 @@ const newsTicker = (ev)=>{
      .then(response => response.json())
      .then(data => {
 
-        document.getElementById('z1').textContent = data.results[0].title
-        document.getElementById('z2').textContent = data.results[1].title
-        document.getElementById('z3').textContent = data.results[2].title
-        document.getElementById('z4').textContent = data.results[3].title
-        document.getElementById('z5').textContent = data.results[4].title
-        // saveNews();           //Need to fix this function--> once saved to local storage the news for a specific stock won't change if user searches a new stock.
+        // document.getElementById('z1').textContent = data.results[0].title
+        // document.getElementById('z2').textContent = data.results[1].title
+        // document.getElementById('z3').textContent = data.results[2].title
+        // document.getElementById('z4').textContent = data.results[3].title
+        // document.getElementById('z5').textContent = data.results[4].title
+        // saveNews();          
+        //Need to fix this function--> once saved to local storage the news for a specific stock won't change if user searches a new stock.
 
         document.getElementById('link1').innerHTML = data.results[0].title
         document.getElementById('link2').innerHTML = data.results[1].title
         document.getElementById('link3').innerHTML = data.results[2].title
         document.getElementById('link4').innerHTML = data.results[3].title
         // document.getElementById('link5').innerHTML = data.results[4].title
-       // document.getElementById('link6').innerHTML = data.results[5].title
+        // document.getElementById('link6').innerHTML = data.results[5].title
         document.getElementById('link1').href = data.results[0].article_url 
         document.getElementById('link2').href = data.results[1].article_url 
         document.getElementById('link3').href = data.results[2].article_url 
